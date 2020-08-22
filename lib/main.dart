@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app2/SecScreen.dart';
+import 'package:flutter_app2/ThirdScreen.dart';
 
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       initialRoute: '/',
       routes: {
-        '/': (context) => SecondScreen(),
+        '/': (context) => SecScreen(),
       },
     );
   }

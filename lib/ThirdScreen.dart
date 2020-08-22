@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
+
 
 class ThirdScreen extends StatelessWidget {
   @override
@@ -19,7 +19,7 @@ class ThirdScreen extends StatelessWidget {
             ],
             begin: FractionalOffset.bottomLeft,
             end: FractionalOffset.topRight,
-            stops: [0, 1, 0, 1],
+            stops: [0.1, 0.5,0.8, 1],
             tileMode: TileMode.clamp,
           ),
         ),
@@ -33,15 +33,17 @@ class ThirdScreen extends StatelessWidget {
                   Icons.home,
                 ),
               ),
-              Positioned(
-                left: MediaQuery.of(context).size.width /3.3,
-                top: MediaQuery.of(context).size.height /7,
-                child: CircleAvatar(
-                  radius: MediaQuery.of(context).size.width / 7,
-                  backgroundColor: Colors.white,
+              Expanded(
+                child: Positioned(
+                  left: MediaQuery.of(context).size.width /3.3,
+                  top: MediaQuery.of(context).size.height /7,
                   child: CircleAvatar(
-                    radius: MediaQuery.of(context).size.width / 7.5,
-                    backgroundImage: AssetImage('circle-avatar.jpg'),
+                    radius: MediaQuery.of(context).size.width / 7,
+                    backgroundColor: Colors.white,
+                    child: CircleAvatar(
+                      radius: MediaQuery.of(context).size.width / 7.5,
+                      backgroundImage: AssetImage('Images/1.png'),
+                    ),
                   ),
                 ),
               ),
@@ -89,7 +91,6 @@ class ThirdScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(height: MediaQuery.of(context).size.height / 35,),
                       FlatButton(
                         onPressed: () {},
                         child: Text('با شرایط سرویس موافقم',style: TextStyle(
