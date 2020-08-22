@@ -142,7 +142,7 @@ class TextContainer extends StatelessWidget {
             border: InputBorder.none,
             suffixIcon: Icon(
               CupertinoIcons.pencil,
-              size: 50,
+              size: MediaQuery.of(context).size.width/50,
             ),
             hintText: title,
             hintStyle: TextStyle(

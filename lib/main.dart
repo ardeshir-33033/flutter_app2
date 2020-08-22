@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       initialRoute: '/',
       routes: {
-        '/': (context) => SecScreen(),
+        '/': (context) => ThirdScreen(),
       },
     );
   }
