@@ -2,12 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SecScreen extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+    final defWidth = MediaQuery.of(context).size.width;
+    final defHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
+        height: defHeight,
+        width: defWidth,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
@@ -25,35 +28,14 @@ class SecScreen extends StatelessWidget {
         child: SafeArea(
           child: Padding(
             padding:
-                EdgeInsets.only(top: MediaQuery.of(context).size.height / 25),
+                EdgeInsets.only(top: defHeight / 25),
             child: Column(
               children: <Widget>[
-                Stack(
+                Row(
                   children: <Widget>[
-                    Container(
-                      width: MediaQuery.of(context).size.width / 2,
-                      height: MediaQuery.of(context).size.height / 18,
-                      decoration: BoxDecoration(
-                          color: Color(0xFFFDFDFE),
-                          borderRadius: BorderRadius.circular(20.0),
-                          border:
-                              Border.all(color: Colors.black54, width: 0.4)),
-                      child: Container(
-                        child: Center(
-                          child: Text(
-                            'سنجش سلامتی',
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.bold,
-                                fontSize:
-                                    MediaQuery.of(context).size.width / 18),
-                          ),
-                        ),
-                      ),
-                    ),
                     Positioned(
                       child: Padding(
-                        padding: EdgeInsets.only(left: 0),
+                        padding: EdgeInsets.fromLTRB(30, 0, 20, 0),
                         child: FloatingActionButton(
                           backgroundColor: Colors.black12.withOpacity(0.1),
                           onPressed: () {},
@@ -63,16 +45,36 @@ class SecScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                    Container(
+                      width: defWidth / 2,
+                      height: defHeight / 18,
+                      decoration: BoxDecoration(
+                          color: Color(0xFFFDFDFE),
+                          borderRadius: BorderRadius.circular(20.0),
+                          border: Border.all(color: Colors.black54, width: 0.4)),
+                      child: Container(
+                        child: Center(
+                          child: Text(
+                            'سنجش سلامتی',
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontWeight: FontWeight.bold,
+                                fontSize: defWidth / 18),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
+
                 Container(
-                  width: MediaQuery.of(context).size.width / 2,
-                  height: MediaQuery.of(context).size.height / 18,
+                  width: defWidth / 2,
+                  height: defHeight / 18,
                   child: Center(
                     child: Text(
                       'خود ارزیابی احتمال کرونا',
                       style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width / 19,
+                          fontSize: defWidth / 19,
                           fontWeight: FontWeight.bold,
                           color: Color(0xFF586163),
                           shadows: [
@@ -86,26 +88,15 @@ class SecScreen extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height / 30,
+                  height: defHeight / 30,
                 ),
                 Stack(
                   children: <Widget>[
-                    Positioned(
-                      left: MediaQuery.of(context).size.width / 3.3,
-                      child: CircleAvatar(
-                        radius: MediaQuery.of(context).size.width / 7,
-                        backgroundColor: Colors.white,
-                        child: CircleAvatar(
-                          radius: MediaQuery.of(context).size.width / 7.5,
-                          backgroundImage: AssetImage('Images/1.png'),
-                        ),
-                      ),
-                    ),
                     Padding(
                       padding: EdgeInsets.only(top: 70),
                       child: Container(
-                        width: MediaQuery.of(context).size.width / 1.1,
-                        height: MediaQuery.of(context).size.height / 1.8,
+                        width: defWidth / 1.1,
+                        height: defHeight / 1.8,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15.0),
                           color: Color(0xFFF4F4F4),
@@ -118,7 +109,7 @@ class SecScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             SizedBox(
-                              height: MediaQuery.of(context).size.height / 10,
+                              height: defHeight / 10,
                             ),
                             Container(
                               margin: EdgeInsets.symmetric(horizontal: 30),
@@ -128,7 +119,7 @@ class SecScreen extends StatelessWidget {
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontSize:
-                                        MediaQuery.of(context).size.width / 16,
+                                        defWidth / 16,
                                     fontWeight: FontWeight.bold,
                                     color: Color(0xFF636363),
                                     shadows: [
@@ -141,7 +132,7 @@ class SecScreen extends StatelessWidget {
                               ),
                             ),
                             SizedBox(
-                              height: MediaQuery.of(context).size.height / 15,
+                              height: defHeight / 15,
                             ),
                             Material(
                               color: Color(0xFFFCAC5E),
@@ -149,8 +140,8 @@ class SecScreen extends StatelessWidget {
                               child: MaterialButton(
                                 onPressed: () {},
                                 minWidth:
-                                    MediaQuery.of(context).size.width / 1.2,
-                                height: MediaQuery.of(context).size.height / 13,
+                                    defWidth / 1.2,
+                                height: defHeight / 13,
                                 child: Text(
                                   'شروع ارزیابی',
                                   style: TextStyle(
@@ -161,7 +152,7 @@ class SecScreen extends StatelessWidget {
                               ),
                             ),
                             SizedBox(
-                              height: MediaQuery.of(context).size.height / 80,
+                              height: defHeight / 80,
                             ),
                             FlatButton(
                               onPressed: () {},
@@ -175,7 +166,19 @@ class SecScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
+
                           ],
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      left: defWidth / 3,
+                      child: CircleAvatar(
+                        radius: defWidth / 8,
+                        backgroundColor: Colors.white,
+                        child: CircleAvatar(
+                          radius: defWidth / 8.5,
+                          backgroundImage: AssetImage('Images/1.png'),
                         ),
                       ),
                     ),
