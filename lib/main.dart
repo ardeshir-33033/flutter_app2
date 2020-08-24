@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app2/SecScreen.dart';
-import 'package:flutter_app2/ThirdScreen.dart';
+import 'package:flutter_app2/Screens/Fourth2Screen.dart';
+import 'file:///E:/pagesjob/2/flutter_app2/lib/Screens/SecScreen.dart';
+import 'package:flutter_app2/Screens/FourthScreen.dart';
+import 'package:flutter_app2/Screens/ThirdScreen.dart';
 
 
 void main() {
@@ -15,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       initialRoute: '/',
       routes: {
-        '/': (context) => SecScreen(),
+        '/': (context) => Fourth2Screen(),
       },
     );
   }

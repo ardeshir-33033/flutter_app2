@@ -42,9 +42,7 @@ class ThirdScreen extends StatelessWidget {
               child: Center(
                 child: Expanded(
                   child: Stack(
-
                     children: <Widget>[
-
                       Expanded(
                         child: Padding(
                           padding: EdgeInsets.only(

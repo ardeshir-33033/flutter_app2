@@ -102,7 +102,7 @@ class SecScreen extends StatelessWidget {
                           color: Color(0xFFF4F4F4),
                           image: DecorationImage(
                             image: AssetImage('Images/corona1.png'),
-                            fit: BoxFit.fill,
+                            fit: BoxFit.cover,
                           ),
                         ),
                         child: Column(
@@ -166,7 +166,6 @@ class SecScreen extends StatelessWidget {
                                 ),
                               ),
                             ),
-
                           ],
                         ),
                       ),
